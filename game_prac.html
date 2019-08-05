@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <link rel="stylesheet" href="game_prac.css">
+    <script>
+        function game(){
+    
+    var ans = Math.floor(Math.random() * 100);
+    var num;
+    var count = 0;
+    while(num != ans){
+        num = Number(prompt("Enter a number between 0 to 100"));
+        count += 1;
+        if(num == ans){
+            alert("WellDone You Guessed it Right in "+count+" Attemps");
+            q = confirm("want to guess again");
+            if(q){
+                game();
+            }
+            else{
+                break;
+            }
+            
+        }
+        else{
+            if(num<ans){
+                alert(num + " is less than from the Right Number");
+            }
+            else{
+                alert(num + " is greater than the Right Number");
+            }
+        }
+    }
+    alert("GAME OVER")
+    
+    }
+
+
+    </script>
+</head>
+<body>
+    <h1>Welcome to Guessing Game</h1>
+    <button onclick="game()">Start Your Game</button>
+</body>
+</html>
